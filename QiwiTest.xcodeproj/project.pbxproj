@@ -1,0 +1,524 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		83892EDC19C0A2A5002750BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83892EDB19C0A2A5002750BF /* Foundation.framework */; };
+		83892EDE19C0A2A5002750BF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83892EDD19C0A2A5002750BF /* CoreGraphics.framework */; };
+		83892EE019C0A2A5002750BF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83892EDF19C0A2A5002750BF /* UIKit.framework */; };
+		83892EE819C0A2A5002750BF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83892EE619C0A2A5002750BF /* InfoPlist.strings */; };
+		83892EEA19C0A2A5002750BF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83892EE919C0A2A5002750BF /* main.m */; };
+		83892EEE19C0A2A5002750BF /* QAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83892EED19C0A2A5002750BF /* QAppDelegate.m */; };
+		83892EF319C0A2A5002750BF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83892EF219C0A2A5002750BF /* Images.xcassets */; };
+		83892EFA19C0A2A5002750BF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83892EF919C0A2A5002750BF /* XCTest.framework */; };
+		83892EFB19C0A2A5002750BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83892EDB19C0A2A5002750BF /* Foundation.framework */; };
+		83892EFC19C0A2A5002750BF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83892EDF19C0A2A5002750BF /* UIKit.framework */; };
+		83892EFD19C0A2A5002750BF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83892EE119C0A2A5002750BF /* CoreData.framework */; };
+		83892F0519C0A2A5002750BF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83892F0319C0A2A5002750BF /* InfoPlist.strings */; };
+		83892F0719C0A2A5002750BF /* QiwiTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83892F0619C0A2A5002750BF /* QiwiTestTests.m */; };
+		83892F1819C0EEBD002750BF /* QUserBalancesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83892F1719C0EEBD002750BF /* QUserBalancesViewController.m */; };
+		83892F1B19C0EF6A002750BF /* QUserViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 83892F1A19C0EF6A002750BF /* QUserViewModel.m */; };
+		83892F1E19C0F2B0002750BF /* QUserListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83892F1D19C0F2B0002750BF /* QUserListViewController.m */; };
+		E12C6A93F79C4F8CA3FCDCE7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 535A6176569249BA92170940 /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		83892EFE19C0A2A5002750BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83892ED019C0A2A4002750BF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 83892ED719C0A2A4002750BF;
+			remoteInfo = QiwiTest;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		41AC8275D3484399BAD2EC74 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		535A6176569249BA92170940 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		83892ED819C0A2A5002750BF /* QiwiTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QiwiTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		83892EDB19C0A2A5002750BF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		83892EDD19C0A2A5002750BF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		83892EDF19C0A2A5002750BF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		83892EE119C0A2A5002750BF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		83892EE519C0A2A5002750BF /* QiwiTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "QiwiTest-Info.plist"; sourceTree = "<group>"; };
+		83892EE719C0A2A5002750BF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		83892EE919C0A2A5002750BF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		83892EEB19C0A2A5002750BF /* QiwiTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QiwiTest-Prefix.pch"; sourceTree = "<group>"; };
+		83892EEC19C0A2A5002750BF /* QAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QAppDelegate.h; sourceTree = "<group>"; };
+		83892EED19C0A2A5002750BF /* QAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QAppDelegate.m; sourceTree = "<group>"; };
+		83892EF219C0A2A5002750BF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		83892EF819C0A2A5002750BF /* QiwiTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QiwiTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		83892EF919C0A2A5002750BF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		83892F0219C0A2A5002750BF /* QiwiTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "QiwiTestTests-Info.plist"; sourceTree = "<group>"; };
+		83892F0419C0A2A5002750BF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		83892F0619C0A2A5002750BF /* QiwiTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QiwiTestTests.m; sourceTree = "<group>"; };
+		83892F1619C0EEBD002750BF /* QUserBalancesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QUserBalancesViewController.h; sourceTree = "<group>"; };
+		83892F1719C0EEBD002750BF /* QUserBalancesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QUserBalancesViewController.m; sourceTree = "<group>"; };
+		83892F1919C0EF6A002750BF /* QUserViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QUserViewModel.h; sourceTree = "<group>"; };
+		83892F1A19C0EF6A002750BF /* QUserViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QUserViewModel.m; sourceTree = "<group>"; };
+		83892F1C19C0F2B0002750BF /* QUserListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QUserListViewController.h; sourceTree = "<group>"; };
+		83892F1D19C0F2B0002750BF /* QUserListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QUserListViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		83892ED519C0A2A4002750BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83892EDE19C0A2A5002750BF /* CoreGraphics.framework in Frameworks */,
+				83892EE019C0A2A5002750BF /* UIKit.framework in Frameworks */,
+				83892EDC19C0A2A5002750BF /* Foundation.framework in Frameworks */,
+				E12C6A93F79C4F8CA3FCDCE7 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83892EF519C0A2A5002750BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83892EFA19C0A2A5002750BF /* XCTest.framework in Frameworks */,
+				83892EFD19C0A2A5002750BF /* CoreData.framework in Frameworks */,
+				83892EFC19C0A2A5002750BF /* UIKit.framework in Frameworks */,
+				83892EFB19C0A2A5002750BF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		83892ECF19C0A2A4002750BF = {
+			isa = PBXGroup;
+			children = (
+				83892EE319C0A2A5002750BF /* QiwiTest */,
+				83892F0019C0A2A5002750BF /* QiwiTestTests */,
+				83892EDA19C0A2A5002750BF /* Frameworks */,
+				83892ED919C0A2A5002750BF /* Products */,
+				41AC8275D3484399BAD2EC74 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		83892ED919C0A2A5002750BF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				83892ED819C0A2A5002750BF /* QiwiTest.app */,
+				83892EF819C0A2A5002750BF /* QiwiTestTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		83892EDA19C0A2A5002750BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83892EDB19C0A2A5002750BF /* Foundation.framework */,
+				83892EDD19C0A2A5002750BF /* CoreGraphics.framework */,
+				83892EDF19C0A2A5002750BF /* UIKit.framework */,
+				83892EE119C0A2A5002750BF /* CoreData.framework */,
+				83892EF919C0A2A5002750BF /* XCTest.framework */,
+				535A6176569249BA92170940 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		83892EE319C0A2A5002750BF /* QiwiTest */ = {
+			isa = PBXGroup;
+			children = (
+				83892EE419C0A2A5002750BF /* Supporting Files */,
+				83892EF219C0A2A5002750BF /* Images.xcassets */,
+				83892EEC19C0A2A5002750BF /* QAppDelegate.h */,
+				83892EED19C0A2A5002750BF /* QAppDelegate.m */,
+				83892F1C19C0F2B0002750BF /* QUserListViewController.h */,
+				83892F1D19C0F2B0002750BF /* QUserListViewController.m */,
+				83892F1619C0EEBD002750BF /* QUserBalancesViewController.h */,
+				83892F1719C0EEBD002750BF /* QUserBalancesViewController.m */,
+				83892F1919C0EF6A002750BF /* QUserViewModel.h */,
+				83892F1A19C0EF6A002750BF /* QUserViewModel.m */,
+			);
+			path = QiwiTest;
+			sourceTree = "<group>";
+		};
+		83892EE419C0A2A5002750BF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				83892EE519C0A2A5002750BF /* QiwiTest-Info.plist */,
+				83892EE619C0A2A5002750BF /* InfoPlist.strings */,
+				83892EE919C0A2A5002750BF /* main.m */,
+				83892EEB19C0A2A5002750BF /* QiwiTest-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		83892F0019C0A2A5002750BF /* QiwiTestTests */ = {
+			isa = PBXGroup;
+			children = (
+				83892F0619C0A2A5002750BF /* QiwiTestTests.m */,
+				83892F0119C0A2A5002750BF /* Supporting Files */,
+			);
+			path = QiwiTestTests;
+			sourceTree = "<group>";
+		};
+		83892F0119C0A2A5002750BF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				83892F0219C0A2A5002750BF /* QiwiTestTests-Info.plist */,
+				83892F0319C0A2A5002750BF /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		83892ED719C0A2A4002750BF /* QiwiTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83892F0A19C0A2A5002750BF /* Build configuration list for PBXNativeTarget "QiwiTest" */;
+			buildPhases = (
+				FA7AAA4440A54B488BFCFB68 /* Check Pods Manifest.lock */,
+				83892ED419C0A2A4002750BF /* Sources */,
+				83892ED519C0A2A4002750BF /* Frameworks */,
+				83892ED619C0A2A4002750BF /* Resources */,
+				658DB03E7A69491485DD6B1C /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QiwiTest;
+			productName = QiwiTest;
+			productReference = 83892ED819C0A2A5002750BF /* QiwiTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		83892EF719C0A2A5002750BF /* QiwiTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83892F0D19C0A2A5002750BF /* Build configuration list for PBXNativeTarget "QiwiTestTests" */;
+			buildPhases = (
+				83892EF419C0A2A5002750BF /* Sources */,
+				83892EF519C0A2A5002750BF /* Frameworks */,
+				83892EF619C0A2A5002750BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				83892EFF19C0A2A5002750BF /* PBXTargetDependency */,
+			);
+			name = QiwiTestTests;
+			productName = QiwiTestTests;
+			productReference = 83892EF819C0A2A5002750BF /* QiwiTestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		83892ED019C0A2A4002750BF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Q;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = mixalich7b;
+				TargetAttributes = {
+					83892EF719C0A2A5002750BF = {
+						TestTargetID = 83892ED719C0A2A4002750BF;
+					};
+				};
+			};
+			buildConfigurationList = 83892ED319C0A2A4002750BF /* Build configuration list for PBXProject "QiwiTest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 83892ECF19C0A2A4002750BF;
+			productRefGroup = 83892ED919C0A2A5002750BF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				83892ED719C0A2A4002750BF /* QiwiTest */,
+				83892EF719C0A2A5002750BF /* QiwiTestTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		83892ED619C0A2A4002750BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83892EE819C0A2A5002750BF /* InfoPlist.strings in Resources */,
+				83892EF319C0A2A5002750BF /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83892EF619C0A2A5002750BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83892F0519C0A2A5002750BF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		658DB03E7A69491485DD6B1C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA7AAA4440A54B488BFCFB68 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		83892ED419C0A2A4002750BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83892EEE19C0A2A5002750BF /* QAppDelegate.m in Sources */,
+				83892F1819C0EEBD002750BF /* QUserBalancesViewController.m in Sources */,
+				83892F1B19C0EF6A002750BF /* QUserViewModel.m in Sources */,
+				83892EEA19C0A2A5002750BF /* main.m in Sources */,
+				83892F1E19C0F2B0002750BF /* QUserListViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83892EF419C0A2A5002750BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83892F0719C0A2A5002750BF /* QiwiTestTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		83892EFF19C0A2A5002750BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 83892ED719C0A2A4002750BF /* QiwiTest */;
+			targetProxy = 83892EFE19C0A2A5002750BF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		83892EE619C0A2A5002750BF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				83892EE719C0A2A5002750BF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		83892F0319C0A2A5002750BF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				83892F0419C0A2A5002750BF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		83892F0819C0A2A5002750BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		83892F0919C0A2A5002750BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		83892F0B19C0A2A5002750BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41AC8275D3484399BAD2EC74 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "QiwiTest/QiwiTest-Prefix.pch";
+				INFOPLIST_FILE = "QiwiTest/QiwiTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		83892F0C19C0A2A5002750BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41AC8275D3484399BAD2EC74 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "QiwiTest/QiwiTest-Prefix.pch";
+				INFOPLIST_FILE = "QiwiTest/QiwiTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		83892F0E19C0A2A5002750BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/QiwiTest.app/QiwiTest";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "QiwiTest/QiwiTest-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "QiwiTestTests/QiwiTestTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		83892F0F19C0A2A5002750BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/QiwiTest.app/QiwiTest";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "QiwiTest/QiwiTest-Prefix.pch";
+				INFOPLIST_FILE = "QiwiTestTests/QiwiTestTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		83892ED319C0A2A4002750BF /* Build configuration list for PBXProject "QiwiTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83892F0819C0A2A5002750BF /* Debug */,
+				83892F0919C0A2A5002750BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83892F0A19C0A2A5002750BF /* Build configuration list for PBXNativeTarget "QiwiTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83892F0B19C0A2A5002750BF /* Debug */,
+				83892F0C19C0A2A5002750BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83892F0D19C0A2A5002750BF /* Build configuration list for PBXNativeTarget "QiwiTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83892F0E19C0A2A5002750BF /* Debug */,
+				83892F0F19C0A2A5002750BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 83892ED019C0A2A4002750BF /* Project object */;
+}

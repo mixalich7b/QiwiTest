@@ -1,0 +1,11 @@
+._*
+.DS_Store
+*.xcodeproj/project.xcworkspace/xcuserdata
+*.xcodeproj/project.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata
+*.xcodeproj/xcuserdata/
+/build/
+Pods
+Pod.lock
+Podfile.lock
+QiwiTest.xcworkspace
