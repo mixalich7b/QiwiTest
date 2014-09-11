@@ -8,8 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+@class RACSignal;
+
 @interface QUserViewModel : NSObject <UISplitViewControllerDelegate>
 
 + (instancetype)sharedInstance;
+
+- (RACSignal *)users;
 
 @end

@@ -20,3 +20,21 @@
 #ifndef IS_PAD
     #define IS_PAD ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
 #endif
+
+#ifndef UIALERTVIEW_HELPER
+#define UIALERTVIEW_HELPER
+
+#define SHOW_ALERT(_title, _message, _tag, _delegate, _cancelButton, _otherButtons, ...) \
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:_title \
+        message:_message \
+        delegate:_delegate \
+        cancelButtonTitle:_cancelButton \
+        otherButtonTitles:_otherButtons, ##__VA_ARGS__]; \
+        alert.tag = _tag; \
+    [alert show];
+#endif
+
+#ifndef LOCALIZATION_SHORT_MACRO
+#define LOCALIZATION_SHORT_MACRO
+    #define _T(text) NSLocalizedString(text, nil)
+#endif

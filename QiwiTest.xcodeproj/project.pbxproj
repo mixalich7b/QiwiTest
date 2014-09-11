@@ -23,6 +23,8 @@
 		83892F1819C0EEBD002750BF /* QUserBalancesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83892F1719C0EEBD002750BF /* QUserBalancesViewController.m */; };
 		83892F1B19C0EF6A002750BF /* QUserViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 83892F1A19C0EF6A002750BF /* QUserViewModel.m */; };
 		83892F1E19C0F2B0002750BF /* QUserListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83892F1D19C0F2B0002750BF /* QUserListViewController.m */; };
+		83892F2119C0F8C0002750BF /* QUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 83892F2019C0F8C0002750BF /* QUser.m */; };
+		83892F2519C25DA8002750BF /* NSXMLParser+NetworkIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 83892F2419C25DA8002750BF /* NSXMLParser+NetworkIndicator.m */; };
 		E12C6A93F79C4F8CA3FCDCE7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 535A6176569249BA92170940 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +64,10 @@
 		83892F1A19C0EF6A002750BF /* QUserViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QUserViewModel.m; sourceTree = "<group>"; };
 		83892F1C19C0F2B0002750BF /* QUserListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QUserListViewController.h; sourceTree = "<group>"; };
 		83892F1D19C0F2B0002750BF /* QUserListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QUserListViewController.m; sourceTree = "<group>"; };
+		83892F1F19C0F8C0002750BF /* QUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QUser.h; sourceTree = "<group>"; };
+		83892F2019C0F8C0002750BF /* QUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QUser.m; sourceTree = "<group>"; };
+		83892F2319C25DA8002750BF /* NSXMLParser+NetworkIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSXMLParser+NetworkIndicator.h"; sourceTree = "<group>"; };
+		83892F2419C25DA8002750BF /* NSXMLParser+NetworkIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSXMLParser+NetworkIndicator.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,14 +134,12 @@
 			children = (
 				83892EE419C0A2A5002750BF /* Supporting Files */,
 				83892EF219C0A2A5002750BF /* Images.xcassets */,
+				83892F2919C261A4002750BF /* Categories */,
+				83892F2619C2615C002750BF /* Models */,
+				83892F2719C26177002750BF /* ViewModels */,
+				83892F2819C2618A002750BF /* Controllers */,
 				83892EEC19C0A2A5002750BF /* QAppDelegate.h */,
 				83892EED19C0A2A5002750BF /* QAppDelegate.m */,
-				83892F1C19C0F2B0002750BF /* QUserListViewController.h */,
-				83892F1D19C0F2B0002750BF /* QUserListViewController.m */,
-				83892F1619C0EEBD002750BF /* QUserBalancesViewController.h */,
-				83892F1719C0EEBD002750BF /* QUserBalancesViewController.m */,
-				83892F1919C0EF6A002750BF /* QUserViewModel.h */,
-				83892F1A19C0EF6A002750BF /* QUserViewModel.m */,
 			);
 			path = QiwiTest;
 			sourceTree = "<group>";
@@ -167,6 +171,44 @@
 				83892F0319C0A2A5002750BF /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		83892F2619C2615C002750BF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				83892F2019C0F8C0002750BF /* QUser.m */,
+				83892F1F19C0F8C0002750BF /* QUser.h */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		83892F2719C26177002750BF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				83892F1919C0EF6A002750BF /* QUserViewModel.h */,
+				83892F1A19C0EF6A002750BF /* QUserViewModel.m */,
+			);
+			name = ViewModels;
+			sourceTree = "<group>";
+		};
+		83892F2819C2618A002750BF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				83892F1C19C0F2B0002750BF /* QUserListViewController.h */,
+				83892F1D19C0F2B0002750BF /* QUserListViewController.m */,
+				83892F1619C0EEBD002750BF /* QUserBalancesViewController.h */,
+				83892F1719C0EEBD002750BF /* QUserBalancesViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		83892F2919C261A4002750BF /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				83892F2319C25DA8002750BF /* NSXMLParser+NetworkIndicator.h */,
+				83892F2419C25DA8002750BF /* NSXMLParser+NetworkIndicator.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,8 +342,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83892F2119C0F8C0002750BF /* QUser.m in Sources */,
 				83892EEE19C0A2A5002750BF /* QAppDelegate.m in Sources */,
 				83892F1819C0EEBD002750BF /* QUserBalancesViewController.m in Sources */,
+				83892F2519C25DA8002750BF /* NSXMLParser+NetworkIndicator.m in Sources */,
 				83892F1B19C0EF6A002750BF /* QUserViewModel.m in Sources */,
 				83892EEA19C0A2A5002750BF /* main.m in Sources */,
 				83892F1E19C0F2B0002750BF /* QUserListViewController.m in Sources */,
