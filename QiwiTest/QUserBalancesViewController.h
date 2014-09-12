@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class QUser;
+
 @interface QUserBalancesViewController : UIViewController
+
+@property (nonatomic, strong) QUser *user;
 
 @end

@@ -30,6 +30,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.tableView.allowsMultipleSelection = NO;
+    
     const CGFloat progressHUDSize = 60.0;
     self.progressHUD = [[MBProgressHUD alloc] initWithFrame:CGRectMake((self.view.bounds.size.width - progressHUDSize) * 0.5, (self.view.bounds.size.height - progressHUDSize) * 0.5, progressHUDSize, progressHUDSize)];
     
@@ -37,7 +39,7 @@
     
     if(IS_PAD && SYS_VERSION >= 7.0) {
         UIEdgeInsets contentInset = self.tableView.contentInset;
-        contentInset.top += [[UIApplication sharedApplication] statusBarFrame].size.height;
+        contentInset.top += 20.0;
         self.tableView.contentInset = contentInset;
     }
     
@@ -76,7 +78,6 @@
     [[[QUserViewModel sharedInstance] usersUseCache:!manually]
      subscribeNext:^(NSArray *users) {
          @strongify(self);
-         NSLog(@"%ld", [users count]);
          self.users = users;
          [self.progressHUD hide:YES];
      } error:^(NSError *error) {
@@ -108,6 +109,7 @@
     QUserCell *cell = (QUserCell *)[tableView dequeueReusableCellWithIdentifier:userCellId];
     if(cell == nil) {
         cell = [[QUserCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:userCellId];
+        cell.selectionStyle = UITableViewCellSelectionStyleGray;
     }
     cell.user = self.users[indexPath.row];
     
@@ -121,7 +123,15 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    QUserBalancesViewController *balancesVC = nil;
+    if(IS_PAD) {
+        balancesVC = self.splitViewController.viewControllers[1];
+        balancesVC.user = self.users[indexPath.row];
+    } else {
+        balancesVC = [QUserBalancesViewController new];
+        balancesVC.user = self.users[indexPath.row];
+        [self.navigationController pushViewController:balancesVC animated:YES];
+    }
 }
 
 @end

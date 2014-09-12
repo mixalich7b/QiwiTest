@@ -10,10 +10,10 @@
 #import "QUser.h"
 #import "NSString+Bounds.h"
 
-const CGFloat marginLeft = 15.0;
-const CGFloat marginTop = 15.0;
-const CGFloat marginRight = 15.0;
-const CGFloat marginBottom = 15.0;
+static const CGFloat marginLeft = 15.0;
+static const CGFloat marginTop = 15.0;
+static const CGFloat marginRight = 15.0;
+static const CGFloat marginBottom = 15.0;
 
 #define LABELS_FONT [UIFont systemFontOfSize:17.0]
 

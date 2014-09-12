@@ -11,7 +11,7 @@
 #import "QUserBalancesViewController.h"
 #import "QUserViewModel.h"
 
-@interface QAppDelegate()
+@interface QAppDelegate() <UISplitViewControllerDelegate>
 
 @end
 
@@ -23,8 +23,8 @@
     UIViewController *rootVC = nil;
     if(IS_PAD) {
         UISplitViewController *splitVC = [UISplitViewController new];
-        splitVC.delegate = [QUserViewModel sharedInstance];
         [splitVC setViewControllers:@[[QUserListViewController new], [QUserBalancesViewController new]]];
+        splitVC.delegate = self;
         rootVC = splitVC;
     } else {
         rootVC = [[UINavigationController alloc] initWithRootViewController:[QUserListViewController new]];
@@ -34,6 +34,10 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (BOOL)splitViewController:(UISplitViewController *)svc shouldHideViewController:(UIViewController *)vc inOrientation:(UIInterfaceOrientation)orientation {
+    return NO;
 }
 
 @end

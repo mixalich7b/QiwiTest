@@ -10,10 +10,11 @@
 
 @class RACSignal;
 
-@interface QUserViewModel : NSObject <UISplitViewControllerDelegate>
+@interface QUserViewModel : NSObject
 
 + (instancetype)sharedInstance;
 
 - (RACSignal *)usersUseCache:(BOOL)useCache;
+- (RACSignal *)balancesWithUserId:(NSString *)userId;
 
 @end
