@@ -14,6 +14,6 @@
 
 + (instancetype)sharedInstance;
 
-- (RACSignal *)users;
+- (RACSignal *)usersUseCache:(BOOL)useCache;
 
 @end

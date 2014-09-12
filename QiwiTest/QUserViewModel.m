@@ -7,16 +7,14 @@
 //
 
 #import "QUserViewModel.h"
-
 #import "QUser.h"
+#import "QApiClient.h"
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <ReactiveNSXMLParser/NSXMLParser+ReactiveCocoa.h>
 #import <EGOCache/EGOCache.h>
 
 static NSString *usersCacheKey = @"usersCacheKey";
-static const NSString *serviceBaseURL = @"http://je.su";
-static NSString *domain = @"je.su";
 
 NS_ENUM(NSInteger, QError) {
     QParsingError = -1,
@@ -33,14 +31,38 @@ NS_ENUM(NSInteger, QError) {
     return instance;
 }
 
-- (RACSignal *)users {
+- (RACSignal *)usersUseCache:(BOOL)useCache {
     return [[RACSignal startLazilyWithScheduler:[RACScheduler schedulerWithPriority:RACSchedulerPriorityBackground] block:^void(id<RACSubscriber> usersSubscriber) {
-        NSArray *users = (NSArray *)[[EGOCache globalCache] objectForKey:usersCacheKey];
+        NSArray *users = nil;
+        if(useCache) {
+            users = (NSArray *)[[EGOCache globalCache] objectForKey:usersCacheKey];
+        }
         if([users isKindOfClass:[NSArray class]] && [users count] > 0) {
             [usersSubscriber sendNext:users];
             [usersSubscriber sendCompleted];
         } else {
-            [[NSXMLParser rac_dictionaryFromURL:[self URLWithPath:@"/test"] elementFilter:nil] subscribeNext:^(NSDictionary *responseDict) {
+            [[[[QApiClient sharedClient] getPath:@"/test" parameters:@{}] deliverOn:[RACScheduler schedulerWithPriority:RACSchedulerPriorityBackground]]
+             subscribeNext:^(NSData *response) {
+                 [[self parseResponseFromXML:response]
+                  subscribeNext:^(NSArray *users) {
+                      [[EGOCache globalCache] setObject:users forKey:usersCacheKey];
+                      [usersSubscriber sendNext:users];
+                  } error:^(NSError *error) {
+                      [usersSubscriber sendError:error];
+                  } completed:^{
+                      [usersSubscriber sendCompleted];
+                  }];
+            } error:^(NSError *error) {
+                [usersSubscriber sendError:error];
+            }];
+        }
+    }] deliverOn:[RACScheduler mainThreadScheduler]];
+}
+
+- (RACSignal *)parseResponseFromXML:(NSData *)rawXML {
+    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        return [[RACScheduler currentScheduler] schedule:^{
+            [[NSXMLParser rac_dictionaryFromData:rawXML elementFilter:nil] subscribeNext:^(NSDictionary *responseDict) {
                 @try {
                     NSDictionary *response = responseDict[@"response"];
                     if(![self validateResponse:response]) {
@@ -54,20 +76,20 @@ NS_ENUM(NSInteger, QError) {
                         }] filter:^BOOL(id value) {
                             return [value isKindOfClass:[QUser class]];
                         }] array];
-                        [usersSubscriber sendNext:users];
+                        [subscriber sendNext:users];
                     } else {
-                        [usersSubscriber sendError:[NSError errorWithDomain:domain code:errorCode userInfo:@{NSLocalizedDescriptionKey: response[@"result-code"][@"message"]}]];
+                        [subscriber sendError:[NSError errorWithDomain:domain code:errorCode userInfo:@{NSLocalizedDescriptionKey: response[@"result-code"][@"message"]}]];
                     }
                 } @catch(...) {
-                    [usersSubscriber sendError:[NSError errorWithDomain:domain code:QParsingError userInfo:@{NSLocalizedDescriptionKey: @"Ошибка при получении данных с сервера. Попробуйте ещё раз."}]];
+                    [subscriber sendError:[NSError errorWithDomain:domain code:QParsingError userInfo:@{NSLocalizedDescriptionKey: @"Ошибка при получении данных с сервера. Попробуйте ещё раз."}]];
                 }
             } error:^(NSError *error) {
-                [usersSubscriber sendError:error];
+                [subscriber sendError:error];
             } completed:^{
-                [usersSubscriber sendCompleted];
+                [subscriber sendCompleted];
             }];
-        }
-    }] deliverOn:[RACScheduler mainThreadScheduler]];
+        }];
+    }];
 }
 
 - (BOOL)validateResponse:(NSDictionary *)response {
@@ -75,10 +97,6 @@ NS_ENUM(NSInteger, QError) {
         return NO;
     }
     return YES;
-}
-
-- (NSURL *)URLWithPath:(NSString *)path {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", serviceBaseURL, path]];
 }
 
 - (QUser *)parseUserFromDict:(NSDictionary *)dict {
