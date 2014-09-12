@@ -12,6 +12,8 @@
 #import "QUser.h"
 #import "QUserViewModel.h"
 
+#import "QUserCell.h"
+
 #import <EXTScope.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <MBProgressHUD/MBProgressHUD.h>
@@ -84,28 +86,31 @@
     [self.refreshControl endRefreshing];
 }
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
+#pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return [self.users count];
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
+    static NSString *userCellId = @"userCellId";
+    QUserCell *cell = (QUserCell *)[tableView dequeueReusableCellWithIdentifier:userCellId];
+    if(cell == nil) {
+        cell = [[QUserCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:userCellId];
+    }
+    cell.user = self.users[indexPath.row];
     
     return cell;
 }
-*/
+
+#pragma mark - UITableViewDelegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [QUserCell heightForUser:self.users[indexPath.row] cellWidth:tableView.frame.size.width];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 
 @end

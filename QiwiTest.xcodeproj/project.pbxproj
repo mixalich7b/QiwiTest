@@ -25,6 +25,8 @@
 		83892F1E19C0F2B0002750BF /* QUserListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83892F1D19C0F2B0002750BF /* QUserListViewController.m */; };
 		83892F2119C0F8C0002750BF /* QUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 83892F2019C0F8C0002750BF /* QUser.m */; };
 		83892F2C19C26DE6002750BF /* QApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 83892F2B19C26DE6002750BF /* QApiClient.m */; };
+		83892F3219C28385002750BF /* QUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 83892F3119C28385002750BF /* QUserCell.m */; };
+		83892F3719C2EFCC002750BF /* NSString+Bounds.m in Sources */ = {isa = PBXBuildFile; fileRef = 83892F3619C2EFCC002750BF /* NSString+Bounds.m */; };
 		E12C6A93F79C4F8CA3FCDCE7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 535A6176569249BA92170940 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +70,10 @@
 		83892F2019C0F8C0002750BF /* QUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QUser.m; sourceTree = "<group>"; };
 		83892F2A19C26DE6002750BF /* QApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QApiClient.h; sourceTree = "<group>"; };
 		83892F2B19C26DE6002750BF /* QApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QApiClient.m; sourceTree = "<group>"; };
+		83892F3019C28385002750BF /* QUserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QUserCell.h; sourceTree = "<group>"; };
+		83892F3119C28385002750BF /* QUserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QUserCell.m; sourceTree = "<group>"; };
+		83892F3519C2EFCC002750BF /* NSString+Bounds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Bounds.h"; sourceTree = "<group>"; };
+		83892F3619C2EFCC002750BF /* NSString+Bounds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Bounds.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +140,8 @@
 			children = (
 				83892EE419C0A2A5002750BF /* Supporting Files */,
 				83892EF219C0A2A5002750BF /* Images.xcassets */,
+				83892F3319C28388002750BF /* Views */,
+				83892F3419C2EFB7002750BF /* Categories */,
 				83892F2619C2615C002750BF /* Models */,
 				83892F2719C26177002750BF /* ViewModels */,
 				83892F2819C2618A002750BF /* Controllers */,
@@ -201,6 +209,24 @@
 				83892F1719C0EEBD002750BF /* QUserBalancesViewController.m */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		83892F3319C28388002750BF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				83892F3019C28385002750BF /* QUserCell.h */,
+				83892F3119C28385002750BF /* QUserCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		83892F3419C2EFB7002750BF /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				83892F3519C2EFCC002750BF /* NSString+Bounds.h */,
+				83892F3619C2EFCC002750BF /* NSString+Bounds.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,9 +363,11 @@
 				83892F2119C0F8C0002750BF /* QUser.m in Sources */,
 				83892EEE19C0A2A5002750BF /* QAppDelegate.m in Sources */,
 				83892F1819C0EEBD002750BF /* QUserBalancesViewController.m in Sources */,
+				83892F3719C2EFCC002750BF /* NSString+Bounds.m in Sources */,
 				83892F2C19C26DE6002750BF /* QApiClient.m in Sources */,
 				83892F1B19C0EF6A002750BF /* QUserViewModel.m in Sources */,
 				83892EEA19C0A2A5002750BF /* main.m in Sources */,
+				83892F3219C28385002750BF /* QUserCell.m in Sources */,
 				83892F1E19C0F2B0002750BF /* QUserListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
