@@ -10,14 +10,12 @@
 #import "QUser.h"
 #import "NSString+Bounds.h"
 
-#import <Masonry/Masonry.h>
-
 const CGFloat marginLeft = 15.0;
 const CGFloat marginTop = 15.0;
 const CGFloat marginRight = 15.0;
 const CGFloat marginBottom = 15.0;
 
-static UIFont *labelsFont = nil;
+#define LABELS_FONT [UIFont systemFontOfSize:17.0]
 
 @interface QUserCell ()
 
@@ -28,41 +26,25 @@ static UIFont *labelsFont = nil;
 
 @implementation QUserCell
 
-+ (void)load {
-    labelsFont = [UIFont systemFontOfSize:17.0];
-}
-
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        UILabel *labelName = [[UILabel alloc] init];
+        CGFloat labelWidth = self.frame.size.width - marginLeft - marginRight;
+        UILabel *labelName = [[UILabel alloc] initWithFrame:CGRectMake(marginLeft, 0, labelWidth, self.frame.size.height)];
         if(labelName) {
-            labelName.font = labelsFont;
+            labelName.font = LABELS_FONT;
             labelName.numberOfLines = 0;
             labelName.lineBreakMode = NSLineBreakByWordWrapping;
             [self addSubview:labelName];
             self.labelName = labelName;
-            [labelName mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.top.equalTo(self.mas_top).with.offset(marginTop);
-                make.left.equalTo(self.mas_left).with.offset(marginLeft);
-                make.right.equalTo(self.mas_right).with.offset(-marginRight);
-                make.height.greaterThanOrEqualTo(@0);
-            }];
         }
-        UILabel *labelSecondName = [[UILabel alloc] init];
+        UILabel *labelSecondName = [[UILabel alloc] initWithFrame:CGRectMake(marginLeft, 0, labelWidth, self.frame.size.height)];
         if(labelSecondName) {
-            labelSecondName.font = labelsFont;
+            labelSecondName.font = LABELS_FONT;
             labelSecondName.numberOfLines = 0;
             labelSecondName.lineBreakMode = NSLineBreakByWordWrapping;
             [self addSubview:labelSecondName];
             self.labelSecondName = labelSecondName;
-            [labelSecondName mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.top.equalTo(labelName.mas_bottom).with.offset(3.0);
-                make.left.equalTo(self.mas_left).with.offset(marginLeft);
-                make.right.equalTo(self.mas_right).with.offset(-marginRight);
-                make.bottom.equalTo(self.mas_bottom).with.offset(-marginBottom);
-                make.height.greaterThanOrEqualTo(@0);
-            }];
         }
     }
     return self;
@@ -70,19 +52,41 @@ static UIFont *labelsFont = nil;
 
 - (void)setUser:(QUser *)user {
     _user = user;
-    NSString *name = [user.name length] > 0 ? user.name : @"-";
-    NSString *secondName = [user.secondName length] > 0 ? user.secondName : @"-";
+    NSString *name = [user.name length] > 0 ? user.name : nil;
+    NSString *secondName = [user.secondName length] > 0 ? user.secondName : nil;
     self.labelName.text = name;
     self.labelSecondName.text = secondName;
+    
+    CGRect nameRect = self.labelName.frame;
+    CGRect secondNameRect = self.labelSecondName.frame;
+    if(name) {
+        if(secondName) {
+            nameRect.origin.y = marginTop;
+            nameRect.size.height = [name qSizeWithFont:LABELS_FONT forWidth:nameRect.size.width].height;
+        } else {
+            nameRect.origin.y = 0;
+            nameRect.size.height = self.frame.size.height;
+        }
+    }
+    if(secondName) {
+        if(name) {
+            secondNameRect.origin.y = CGRectGetMaxY(nameRect) + 3.0;
+            secondNameRect.size.height = [secondName qSizeWithFont:LABELS_FONT forWidth:secondNameRect.size.width].height;
+        } else {
+            secondNameRect.origin.y = 0;
+            secondNameRect.size.height = self.frame.size.height;
+        }
+    }
+    self.labelName.frame = nameRect;
+    self.labelSecondName.frame = secondNameRect;
 }
 
 + (CGFloat)heightForUser:(QUser *)user cellWidth:(CGFloat)width {
     width -= marginLeft + marginRight;
-    NSString *name = [user.name length] > 0 ? user.name : @"-";
-    NSString *secondName = [user.secondName length] > 0 ? user.secondName : @"-";
-    CGFloat nameHeight = [name qSizeWithFont:labelsFont forWidth:width].height;
-    CGFloat secondNameHeight = [secondName qSizeWithFont:labelsFont forWidth:width].height;
-    return marginTop + nameHeight + 3.0 + secondNameHeight + marginBottom;
+    CGFloat nameHeight = [user.name length] > 0 ? [user.name qSizeWithFont:LABELS_FONT forWidth:width].height : 0;
+    CGFloat secondNameHeight = [user.secondName length] > 0 ? [user.secondName qSizeWithFont:LABELS_FONT forWidth:width].height : 0;
+    CGFloat space = (nameHeight > 0 && secondNameHeight > 0) ? 3.0 : 0;
+    return marginTop + nameHeight + space + secondNameHeight + marginBottom;
 }
 
 @end

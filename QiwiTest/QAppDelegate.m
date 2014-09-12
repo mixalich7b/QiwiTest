@@ -24,8 +24,7 @@
     if(IS_PAD) {
         UISplitViewController *splitVC = [UISplitViewController new];
         splitVC.delegate = [QUserViewModel sharedInstance];
-        UINavigationController *detailVC = [[UINavigationController alloc] initWithRootViewController:[QUserBalancesViewController new]];
-        [splitVC setViewControllers:@[[QUserListViewController new], detailVC]];
+        [splitVC setViewControllers:@[[QUserListViewController new], [QUserBalancesViewController new]]];
         rootVC = splitVC;
     } else {
         rootVC = [[UINavigationController alloc] initWithRootViewController:[QUserListViewController new]];

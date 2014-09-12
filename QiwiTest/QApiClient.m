@@ -35,14 +35,14 @@ NSString *const domain = @"je.su";
     @weakify(self)
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         @strongify(self)
-        NSURLSessionDataTask *task = [self GET:path parameters:parameters success:^(NSURLSessionDataTask *task, NSData *responseObject) {
+        AFHTTPRequestOperation *operation = [self GET:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
             [subscriber sendNext:responseObject];
             [subscriber sendCompleted];
-        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             [subscriber sendError:error];
         }];
         return [RACDisposable disposableWithBlock:^{
-            [task cancel];
+            [operation cancel];
         }];
     }];
 }

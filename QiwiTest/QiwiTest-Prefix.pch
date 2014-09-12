@@ -21,6 +21,10 @@
     #define IS_PAD ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
 #endif
 
+#ifndef SYS_VERSION
+    #define SYS_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
+#endif
+
 #ifndef UIALERTVIEW_HELPER
 #define UIALERTVIEW_HELPER
 

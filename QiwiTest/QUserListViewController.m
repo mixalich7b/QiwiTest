@@ -34,14 +34,25 @@
     self.progressHUD = [[MBProgressHUD alloc] initWithFrame:CGRectMake((self.view.bounds.size.width - progressHUDSize) * 0.5, (self.view.bounds.size.height - progressHUDSize) * 0.5, progressHUDSize, progressHUDSize)];
     
     self.refreshControl = [[UIRefreshControl alloc] init];    
+    
+    if(IS_PAD && SYS_VERSION >= 7.0) {
+        UIEdgeInsets contentInset = self.tableView.contentInset;
+        contentInset.top += [[UIApplication sharedApplication] statusBarFrame].size.height;
+        self.tableView.contentInset = contentInset;
+    }
+    
+    [self setUIActions];
+    
+    [self updateUsersManually:NO];
+}
+
+- (void)setUIActions{
     @weakify(self);
     [[self.refreshControl rac_signalForControlEvents:UIControlEventValueChanged]
      subscribeNext:^(id x) {
          @strongify(self);
          [self updateUsersManually:YES];
      }];
-    
-    [self updateUsersManually:NO];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

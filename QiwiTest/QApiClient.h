@@ -13,7 +13,7 @@
 
 extern NSString *const domain;
 
-@interface QApiClient : AFHTTPSessionManager
+@interface QApiClient : AFHTTPRequestOperationManager
 
 + (instancetype)sharedClient;
 
